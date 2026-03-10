@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+         <h1>Project 5</h1>
+    </header>
+    <section>
+        <h2>what I did</h2>
+        <p> in this project i worked on text analysis with use of Spacy
+            covering the topics of 15 frequent words and 10 ten frequent verbs. Helping me emphasize the use of NLP techniques and coding to new contexts. For the subject i chose i decided to use te the book frankenstein as my example for this project.
+        </p>
+    </section>
+    <section>
+        <h2>Proof of code</h2>
+        <pre><code>
+            <div class="code-block">
+import spacy
+
+# Load the spaCy model
+nlp = spacy.load('en_core_web_sm')
+
+def tokenize_and_lemmatize(text):
+    """Tokenize, lowercase, and lemmatize text, removing stop words and punctuation."""
+    doc = nlp(text.lower())
+    words = [token.lemma_ for token in doc if not token.is_stop and not token.is_punct and len(token.text) > 2]
+    return words
+
+def word_frequency(words):
+    """Count the frequency of each word."""
+    freq = {}
+    for word in words:
+        freq[word] = freq.get(word, 0) + 1
+    return freq
+
+# Example usage
+text = "This is a sample text for analysis. It demonstrates text processing with spaCy."
+words = tokenize_and_lemmatize(text)
+freq = word_frequency(words)
+
+print("Processed words:", words)
+print("Word frequencies:", freq)
+       
+        </code></pre>
+    </section>
+    <section>
+        <h2>What resulted from the analysis</h2>
+        <div class="frequency-results">
+            <p>After running the code, I obtained the following results:</p>
+        <h3>Top 15 Frequent Words:</h3>
+        <ul>
+            <li>day: 4</li>
+            <li>say: 4</li>
+            <li>waldman: 4</li>
+            <li>study: 4</li>
+            <li>branch: 4</li>
+            <li>natural: 4</li>
+            <li>science: 4</li>
+            <li>father: 3</li>
+            <li>public: 3</li>
+            <li>know: 3</li>
+            <li>acquaint: 3</li>
+            <li>new: 3</li>
+            <li>lecture: 3</li>
+            <li>take: 3</li>
+            <li>procure: 3</li>
+        </ul>
+        <h3>Top 10 Frequent Verbs:</h3>
+        <ul>
+            <li>say: 5</li>
+            <li>know: 3</li>
+            <li>become: 3</li>
+            <li>acquaint: 3</li>
+            <li>have: 3</li>
+            <li>take: 3</li>
+            <li>procure: 3</li>
+            <li>feel: 3</li>
+            <li>make: 3</li>
+            <li>fill: 2</li>
+        </ul>
+
+    </section>
+    <footer>
+        <p>&copy; 2026 NLP Analysis. All rights reserved.</p>
+    </footer>
+
+
+</body>
+</html>
