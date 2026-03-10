@@ -3,63 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About me</title>
+    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Roman Judge</h1>
-        <img src="IMG_8141.jpeg" alt="roman judge">
-        <hr>
-        <p>
-            <a href="rjudge@uorgeon.edu">rjudge@uorgeon.edu</a>
-            <a href="tel:480 512 2759">480 512 2759</a>
-            <a href="https://www.linkedin.com/in/roman-judge-0a2b3c4d">LinkedIn</a>
-        </p>
+        <h1>Project 3</h1>
     </header>
-<!---personal information--->
     <section>
-        <h2>Personal Information</h2>
-        <p> 
-            I have a passion for challengeing myself in new enviroments. 
-            I am a cat person who loves to play video games and traveling.
+        <h2>overview</h2>
+        <p>what happens in project 3 is the useage of the turtle module. With the use of creating shapes and patters into a form of a visual artwork
+            what makes this project unique is the use of generalized functions.
         </p>
-
-    </section>
-    <!---education--->
-    <section> 
-        <h2>Education</h2>
-        <p> 
-            i am currently pursuing a degree in business administration at the university of oregon. 
-            highschool diploma from rancho solano high school
-        </p>
-
-    </section>
-    <!---skills--->
-    <section>
-        <h2>Skills</h2>
-        <ul>
-            <ul>Youth Leadership</ul>
-            <ul>Computer Technical Skills</ul>
-            <ul>Research Skills</ul>
-            <ul>Economic Interpretation</ul>
-            <ul>Weight Lifting</ul>
-            <ul>Camping Skills</ul>
-        </ul>
     </section>
     <section>
-        <h2>featured Projects</h2>
-        <h3><a href="project3.html/index.html">Project 3</a></h3>
-        <p>is a python project expressing a scenery drawing using the turtle module. i used a genrealization technique to improve the efficecny of the code makeup</p>
-        <h3><a href="project5.html/index.html">Project 2</a></h3>
-        <p>A text processing of the word list, top 15 frequent words, and 10 frequent verbs.  of a chapter passage of frankestein using Spacy for the goal of word analysis. </p>
-        <h3><a href="https://colab.research.google.com/drive/16W9en9XrID72lGU9uHH4ds-_o5sAlrVG?usp=sharing">Project 3</a></h3>
-        <p>Project 7 includes a data visualizaiton of a datset that covers the students characteristics and their correlation to degrees. With the use of vector coding i was able to determine the relationship of students and their degrees.</p>
+        <h2> Proof of code</h2>
+        <pre><code>
+            <div class="code-snippet">
+# Example 1: Setup Turtle
+def setup_turtle():
+    """Initialize turtle with standard settings"""
+    t = turtle.Turtle()
+    t.speed(0)  # Fastest speed
+    screen = turtle.Screen()
+    screen.title("Turtle Graphics Assignment")
+    return t, screen
 
+# Example 2: Draw a House
+def draw_house(t, x, y, size, wall_color="#9C8B50", window_color="#3399ff"):
+    """Draw a house with customizable colors"""
+    jump_to(t, x, y)
+    draw_square(t, size, fill_color=wall_color)
+    jump_to(t, x, y)
+    draw_triangle(t, size, fill_color=wall_color)
+    jump_to(t, x + size*0.1, y - size*0.1)
+    draw_square(t, int(size*0.4), fill_color=window_color)
+
+# Example 3: Draw the Scene
+def draw_scene(t):
+    # Set background color
+    screen = t.getscreen()
+    screen.bgcolor("#ff6600")
+    #sun
+    jump_to(t,-25,-25)
+    draw_circle(t,50,fill_color="yellow")
+    #ground
+    jump_to(t,-500,0)
+    draw_rectangle(t,1000,500,fill_color="#246d49")
+    #clouds
+    draw_cloud(t, 150,250, scale=1.2, color="#f6f6f6")
+    #mountains
+    draw_mountain(t, 150, 0, 150, fill_color="#595959")
+    #houses
+    draw_house(t, -200, -150, 80, wall_color="#95541b", window_color="#3399ff")
+    #road
+    jump_to(t,-450,-280)
+    draw_rectangle(t,1000,30,fill_color="#a45111")
+        </code></pre>
     </section>
-<!---footer section--->
+    <section>
+        <h2>Results</h2>
+        <div class="results">
+            <img src="turtlepicture.png" alt="Turtle Scene" width="400">
+        </div>
+    </section>
     <footer>
-        <p>&copy; 2026 Roman Judge. All rights reserved.</p>
-
+        <p>CS110 - Spring 2026</p>
     </footer>
-</body>
+
+   
+</html>
